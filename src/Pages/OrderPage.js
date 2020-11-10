@@ -1,21 +1,19 @@
-import React, {Fragment} from 'react'
+import React from "react";
 
 //Order pages components
 
-import CreateProduct from '../components/CreateProduct'
-import ProductList from '../components/ProductList';
+import CreateProduct from "../components/CreateProduct";
+import ProductList from "../components/ProductList";
 
 function OrderPage() {
-    return (
-      <div className="App">
-        <Fragment>
-          <div className="container">
-          <CreateProduct/>
-          <ProductList/>
-          </div>
-        </Fragment>
+  return (
+    <div className="App">
+      <div className="container">
+        <CreateProduct />
+        <ProductList />
       </div>
-    );
-  }
-  
-  export default OrderPage;
+    </div>
+  );
+}
+
+export default OrderPage;
