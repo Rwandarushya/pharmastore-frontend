@@ -1,23 +1,21 @@
-import React, {Fragment} from 'react';
+import React from "react";
 
 // Landingpage components
 
-import NavBar from '../components/NavBar'
-import MainBody from '../components/MainBody'
-import Footer from '../components/Footer'
+import NavBar from "../components/NavBar";
+import MainBody from "../components/MainBody";
+import Footer from "../components/Footer";
 
-function LandingPage(){
-    return(
-        <Fragment>
-        <body>
-        <div class="site-wrap">
-        <NavBar/>
-        <MainBody/>
-        <Footer/>
-        </div>
-        </body>
-        </Fragment>
-    )
+function LandingPage() {
+  return (
+    <body>
+      <div class="site-wrap">
+        <NavBar />
+        <MainBody />
+        <Footer />
+      </div>
+    </body>
+  );
 }
 
 export default LandingPage;

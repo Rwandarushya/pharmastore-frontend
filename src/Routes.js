@@ -1,20 +1,21 @@
 import React from "react";
-import { Router, Switch, Route, Redirect } from "react-router-dom";
-import history from './browserHistory';
-
-//import pages
-
-import LandingPage from './Pages/LandingPage'
-import OrderPage from './Pages/OrderPage'
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import LandingPage from "./Pages/LandingPage";
+import OrderPage from "./Pages/OrderPage";
 
 const Routes = () => {
   return (
-    <Router history={history}>
+    <Router>
       <Switch>
-        <Route path="/" component={LandingPage} />
+        <Redirect exact from="/" to="/home" />
+        <Route path="/home" component={LandingPage} />
         <Route path="/order" component={OrderPage} />
-        </Switch>
+      </Switch>
     </Router>
   );
 };
