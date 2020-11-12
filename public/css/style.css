@@ -80,6 +80,10 @@ a {
     -webkit-box-shadow: none !important;
     box-shadow: none !important; }
 
+    .modal-dialog {
+      margin: 20vh auto 0px auto
+  }
+
 .site-section {
   padding: 2.5em 0; }
   @media (min-width: 768px) {
