@@ -14,7 +14,7 @@ function EditProduct({pro}){
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(body)
            }) 
-           window.location='/';
+           window.location='/order';
         } catch (err) {
             console.error(err.message);
         }
@@ -40,6 +40,7 @@ function EditProduct({pro}){
 
       
       <div className="modal-body">
+        <label>New Quantity</label>
         <input 
             type='text' 
             className='form-control' 
