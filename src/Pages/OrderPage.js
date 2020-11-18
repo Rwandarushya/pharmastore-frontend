@@ -8,10 +8,14 @@ import CreateProduct from "../components/CreateProduct";
 import OrderList from "../components/OrderList";
 
 const OrderPage = (props) => {
-  const { state } = useContext(AppContext);
-
+  const { state, setState } = useContext(AppContext);
+  localStorage.setItem("previousPage", "/order");
   useEffect(() => {
     if (!state.currentUser) {
+      setState({
+        ...state,
+        previousPage: localStorage.getItem("previousPage"),
+      });
       props.history.push("/login");
     }
   }, []);

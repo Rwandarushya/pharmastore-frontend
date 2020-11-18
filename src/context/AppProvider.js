@@ -6,6 +6,7 @@ const store = {
   isAuthenticated: false,
   currentUser: localStorage.getItem("user"),
   loading: false,
+  previousPage: localStorage.getItem("previousPage"),
 };
 
 export const AppContext = createContext(store);

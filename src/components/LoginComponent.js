@@ -1,9 +1,21 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect, useContext } from "react";
 import axios from "axios";
+import { AppContext } from "../context/AppProvider";
 
 import Background from "../images/hero_bg.jpg";
 
-function LoginComponent(props) {
+const LoginComponent = (props) => {
+  const { state } = useContext(AppContext);
+  useEffect(() => {
+    console.log(
+      "the page to redirect to is",
+      localStorage.getItem("previousPage")
+    );
+    if (state.currentUser) {
+      props.history.push(localStorage.getItem("previousPage"));
+    }
+  });
+
   const [account, setAccount] = useState({
     email: "",
     password: "",
@@ -37,7 +49,8 @@ function LoginComponent(props) {
             password: "",
             currentUser: localStorage.getItem("user"),
           });
-          props.history.push("/admin");
+          window.location.href = localStorage.getItem("previousPage");
+          props.history.push(localStorage.getItem("previousPage"));
         }
       })
       .catch((err) => {
@@ -134,6 +147,6 @@ function LoginComponent(props) {
       </body>
     </Fragment>
   );
-}
+};
 
 export default LoginComponent;
