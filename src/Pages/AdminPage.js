@@ -5,9 +5,6 @@ import AdminBody from "../components/AdminBody";
 import AdminMenu from "../components/AdminMenu";
 
 function AdminPage() {
-
- 
-
   return (
     <div className="App">
       <div className="container">
