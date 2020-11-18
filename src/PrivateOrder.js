@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 
-const PrivateRoute = ({ authenticated, ownProps }) => {
+const PrivateOrder = ({ authenticated, ownProps }) => {
   const { component: Component, ...rest } = ownProps;
   return (
     <Route
@@ -11,4 +11,4 @@ const PrivateRoute = ({ authenticated, ownProps }) => {
   );
 };
 
-export default PrivateRoute;
+export default PrivateOrder;

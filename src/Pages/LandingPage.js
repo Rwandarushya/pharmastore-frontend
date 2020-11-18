@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 function LandingPage() {
   return (
     <body>
-      <div class="site-wrap">
+      <div className="site-wrap">
         <NavBar />
         <MainBody />
         <Footer />

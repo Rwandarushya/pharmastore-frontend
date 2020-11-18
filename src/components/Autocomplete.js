@@ -19,7 +19,6 @@ export default function AutoComplete() {
     getProducts();
   }, []);
 
-  
   return (
     <div style={{ width: "100%" }}>
       <Autocomplete
