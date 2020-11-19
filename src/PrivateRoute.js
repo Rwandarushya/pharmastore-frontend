@@ -1,14 +1,17 @@
-import React from "react";
-import { Route, Redirect } from "react-router-dom";
+// import React, {useEffect, useContext} from "react";
+// import { Route, Redirect } from "react-router-dom";
+// import { AppContext } from "./context/AppProvider";
+// import AdminPage from './Pages/AdminPage'
 
-const PrivateRoute = ({ authenticated, ownProps }) => {
-  const { component: Component, ...rest } = ownProps;
-  return (
-    <Route
-      {...rest}
-      render={() => (authenticated ? <Component /> : <Redirect to="/login" />)}
-    />
-  );
-};
+// const PrivateRoute = (props) => {
+  
 
-export default PrivateRoute;
+//   return (
+//     <Route
+//       {...rest}
+//       render={() => (state.currentUser ? <Component /> : <Redirect to="/login" />)}
+//     />
+//   );
+// };
+
+// export default PrivateRoute;

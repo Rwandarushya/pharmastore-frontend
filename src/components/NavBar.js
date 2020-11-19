@@ -5,6 +5,7 @@ import { AppContext } from "../context/AppProvider";
 function NavBar() {
   const { state } = useContext(AppContext);
   const url = null;
+
   return (
     <div className="site-navbar py-2">
       <div className="container">
@@ -26,19 +27,26 @@ function NavBar() {
                   <Link to="/home">Home</Link>
                 </li>
                 <li>
-                  <Link to="/login">Login</Link>
+                  <Link to="/order">Order</Link>
                 </li>
-                {state.currentUser && (
-                  <React.Fragment>
-                    <li>
-                      <Link to="/order">Order</Link>
-                    </li>
 
-                    <li>
-                      <Link to="/list">Product List</Link>
-                    </li>
-                  </React.Fragment>
-                )}
+                <li>
+                  <Link to="/list">Product List</Link>
+                </li>
+
+                <li>
+                  {state.currentUser &&
+                    <Link
+                      to="/"
+                      onClick={() => {
+                        window.location.href = "/";
+                        localStorage.clear();
+                      }}
+                    >
+                      Logout
+                    </Link>
+                  }
+                </li>
               </ul>
             </nav>
           </div>
@@ -53,7 +61,7 @@ function NavBar() {
               href={url}
               className="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"
             >
-              <span className="icon-menu"></span>
+              <span className="icon-menu" onClick={console.log("works")}></span>
             </a>
           </div>
         </div>

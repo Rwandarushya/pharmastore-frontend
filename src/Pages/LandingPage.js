@@ -1,5 +1,4 @@
 import React from "react";
-
 // Landingpage components
 
 import NavBar from "../components/NavBar";
@@ -7,6 +6,7 @@ import MainBody from "../components/MainBody";
 import Footer from "../components/Footer";
 
 function LandingPage() {
+  localStorage.setItem("previousPage", "/");
   return (
     <body>
       <div className="site-wrap">

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import RegisterModal from './RegisterModal';
 
 import EditProduct from "./EditProduct";
 
@@ -39,6 +40,7 @@ function AdminBody() {
   return (
     <div>
       <h1>List of all Pharmastore users</h1>
+      <RegisterModal/>
       <table className="table mt-5 text-center">
         <thead>
           <tr>

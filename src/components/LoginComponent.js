@@ -39,18 +39,17 @@ const LoginComponent = (props) => {
       .post("http://localhost:5000/users/login", data)
       .then((res) => {
         console.log(res);
-
         if (res.data.status === 200) {
           setAccount({ ...account, loading: false });
           localStorage.setItem("user", JSON.stringify(res.data));
+          localStorage.setItem("email",res.data.email);
           setAccount({
             ...account,
             email: "",
             password: "",
             currentUser: localStorage.getItem("user"),
           });
-          window.location.href = localStorage.getItem("previousPage");
-          props.history.push(localStorage.getItem("previousPage"));
+          window.location.href=`${localStorage.getItem("previousPage")}`;
         }
       })
       .catch((err) => {
