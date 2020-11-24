@@ -1,47 +1,67 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AppContext } from "../context/AppProvider";
 
 function NavBar() {
+  const { state } = useContext(AppContext);
   const url = null;
+
   return (
-    <div class="site-navbar py-2">
-      <div class="container">
-        <div class="d-flex align-items-center justify-content-between">
-          <div class="logo">
-            <div class="site-logo">
-            <Link to="/home" class='js-logo-clone'>
-                <strong class="text-primary">Pharma</strong>Store
-            </Link>
+    <div className="site-navbar py-2">
+      <div className="container">
+        <div className="d-flex align-items-center justify-content-between">
+          <div className="logo">
+            <div className="site-logo">
+              <Link to="/home" className="js-logo-clone">
+                <strong className="text-primary">Pharma</strong>Store
+              </Link>
             </div>
           </div>
-          <div class="main-nav d-none d-lg-block">
+          <div className="main-nav d-none d-lg-block">
             <nav
-              class="site-navigation text-right text-md-center"
+              className="site-navigation text-right text-md-center"
               role="navigation"
             >
-              <ul class="site-menu js-clone-nav d-none d-lg-block">
-                <li class="active">
+              <ul className="site-menu js-clone-nav d-none d-lg-block">
+                <li className="active">
                   <Link to="/home">Home</Link>
                 </li>
                 <li>
                   <Link to="/order">Order</Link>
                 </li>
+
                 <li>
-                 <Link to="/list">Product List</Link>
+                  <Link to="/list">Product List</Link>
+                </li>
+
+                <li>
+                  {state.currentUser &&
+                    <Link
+                      to="/"
+                      onClick={() => {
+                        window.location.href = "/";
+                        localStorage.clear();
+                      }}
+                    >
+                      Logout
+                    </Link>
+                  }
                 </li>
               </ul>
             </nav>
           </div>
-          <div class="icons">
-          <Link to="/admin" class="icons-btn d-inline-block bag" >
-              <span><i class="fas fa-users-cog"></i></span>
-              <span class="number">1</span>
-          </Link>
+          <div className="icons">
+            <Link to="/admin" className="icons-btn d-inline-block bag">
+              <span>
+                <i className="fas fa-users-cog"></i>
+              </span>
+              <span className="number">1</span>
+            </Link>
             <a
               href={url}
-              class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"
+              className="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"
             >
-              <span class="icon-menu"></span>
+              <span className="icon-menu" onClick={console.log("works")}></span>
             </a>
           </div>
         </div>
