@@ -37,7 +37,7 @@ function ProductList() {
           <tr>
             <th>Product name</th>
             <th>Description</th>
-            <th>Quantity</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>

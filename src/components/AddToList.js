@@ -30,15 +30,14 @@ function AddToList() {
 
   return (
     <Fragment>
-      <h4 className="mt-5">List of Available Product</h4>
-
+      <h3 className="mt-2">List of Available Product </h3>
       <button
         type="button"
         className="btn btn-primary"
         data-toggle="modal"
         data-target="#myModal"
       >
-        Add
+        Add Product
       </button>
 
       <div className="modal" id="myModal">

@@ -2,8 +2,7 @@ import React,{useContext,useEffect} from "react";
 import { AppContext } from "../context/AppProvider";
 
 import NavBar from "../components/NavBar";
-import AdminBody from "../components/AdminBody";
-import AdminMenu from "../components/AdminMenu";
+import Dashboard from "../components/Dashboard";
 
 const AdminPage=(props)=>{
 
@@ -22,8 +21,7 @@ const AdminPage=(props)=>{
     <div className="App">
       <div className="container">
         <NavBar />
-        <AdminMenu />
-        <AdminBody />
+        <Dashboard />
       </div>
     </div>
   );

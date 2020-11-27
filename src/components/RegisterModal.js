@@ -7,8 +7,11 @@ let user = JSON.parse(localStorage.getItem('user')) ;
 if (user) console.log(JSON.stringify(user.token))
 function RegisterModal() {
   const [user, setUser] = useState({
+    names: "",
     email: "",
     password: "",
+    pharmacyName: "",
+    PhoneNumber: "",
     role: "",
     pharmacyId: "",
   });
@@ -27,7 +30,7 @@ function RegisterModal() {
       console.log(body)
       const resp = await fetch(`http://localhost:5000/users/signup`, {
         method: "POST",
-        headers: { Authorization: user.token},
+        headers: { Authorization: localStorage.getItem('token')},
         body: JSON.stringify(body),
       });
       console.log(resp);
@@ -42,11 +45,11 @@ function RegisterModal() {
     <Fragment>
       <button
         type="button"
-        className="btn btn-primary"
+        className="btn btn-info border-info add-user"
         data-toggle="modal"
         data-target="#myModal"
       >
-        Add
+        Add User
       </button>
 
       <div className="modal col-sm-12" id="myModal">
@@ -62,27 +65,17 @@ function RegisterModal() {
             <div class="modal-body">
               <div class="form-group">
                 <label for="firstname" class="control-label">
-                  First Name*
+                  Names*
                 </label>
                 <input
                   type="text"
                   class="form-control"
                   id="firstname"
-                  name="firstname"
-                  placeholder="First Name"
+                  name="names"
+                  value={user.names}
+                  onChange={handleChange}
+                  placeholder="Full Name"
                   required
-                />
-              </div>
-              <div class="form-group">
-                <label for="lastname" class="control-label">
-                  Last Name
-                </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="lastname"
-                  name="lastname"
-                  placeholder="Last Name"
                 />
               </div>
               <div class="form-group">
@@ -116,33 +109,6 @@ function RegisterModal() {
                 />
               </div>
               <div class="form-group">
-                <label for="gender" class="control-label">
-                  Gender
-                </label>
-                <div className="d-flex justify-content-center">
-                  <label class="radio-inline px-3">
-                    <input
-                      type="radio"
-                      name="gender"
-                      id="male"
-                      value="male"
-                      required
-                    />
-                    Male
-                  </label>
-                  <label class="radio-inline px-3">
-                    <input
-                      type="radio"
-                      name="gender"
-                      id="female"
-                      value="female"
-                      required
-                    />
-                    Female
-                  </label>
-                </div>
-              </div>
-              <div class="form-group">
                 <label for="lastname" class="control-label">
                   Mobile
                 </label>
@@ -150,7 +116,9 @@ function RegisterModal() {
                   type="text"
                   class="form-control"
                   id="mobile"
-                  name="mobile"
+                  name="PhoneNumber"
+                  value={user.PhoneNumber}
+                  onChange={handleChange}
                   placeholder="Mobile"
                 />
               </div>
@@ -162,8 +130,10 @@ function RegisterModal() {
                   type="text"
                   class="form-control"
                   id="pharmacy_name"
-                  name="pharmacy_name"
-                  placeholder="pharmacy_name"
+                  name="pharmacyName"
+                  value={user.pharmacyName}
+                  onChange={handleChange}
+                  placeholder="Pharmacy Name"
                 />
               </div>
               <div class="form-group">

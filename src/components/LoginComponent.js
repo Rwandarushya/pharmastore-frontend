@@ -43,6 +43,7 @@ const LoginComponent = (props) => {
           setAccount({ ...account, loading: false });
           localStorage.setItem("user", JSON.stringify(res.data));
           localStorage.setItem("email",res.data.email);
+          localStorage.setItem("token",res.data.token)
           setAccount({
             ...account,
             email: "",
