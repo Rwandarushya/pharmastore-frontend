@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -24,11 +25,12 @@ function Footer() {
             <div className="col-lg-3 mx-auto mb-5 mb-lg-0">
               <h3 className="footer-heading mb-4">Navigation</h3>
               <ul className="list-unstyled">
-                <li>
-                  <a href="order.php">Order</a>
+              <li>
+                  <Link to="/order">Order</Link>
                 </li>
+
                 <li>
-                  <a href="list.php">Product List</a>
+                  <Link to="/admin">Admin</Link>
                 </li>
               </ul>
             </div>

@@ -30,9 +30,9 @@ function NavBar() {
                   <Link to="/order">Order</Link>
                 </li>
 
-                <li>
+                {/* <li>
                   <Link to="/list">Product List</Link>
-                </li>
+                </li> */}
 
                 <li>
                   {state.currentUser &&
