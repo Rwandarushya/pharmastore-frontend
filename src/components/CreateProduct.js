@@ -62,7 +62,7 @@ function CreateProduct() {
 	return (
 		<Fragment>
 			<NavBar />
-			<h5 className="text-centern mt-5">Add Pharmaceutical Product you want to order</h5>
+			<h3 className="text-centern mt-5">Make a list of all Pharmaceutical Products you want to order</h3>
 			<div className="d-flex mt-5">
 				<Autocomplete
 					onChange={(event, newValue) => {
