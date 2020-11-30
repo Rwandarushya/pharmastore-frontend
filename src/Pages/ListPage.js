@@ -4,6 +4,8 @@ import ProductList from "../components/ProductList";
 import AddToList from "../components/AddToList";
 import { AppContext } from "../context/AppProvider";
 
+import CustomPaginationActionsTable from '../components/ProductList'
+
 const ListPage = (props) => {
   const { state } = useContext(AppContext);
 
@@ -18,7 +20,7 @@ const ListPage = (props) => {
       <div className="container">
         <NavBar />
         <AddToList />
-        <ProductList />
+        <CustomPaginationActionsTable />
       </div>
     </div>
   );

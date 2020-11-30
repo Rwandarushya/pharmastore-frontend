@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import EditIcon from '@material-ui/icons/Edit';
 
 function EditProduct({ pro }) {
   const [quantity, setQuantity] = useState(pro.quantity);
@@ -23,11 +24,11 @@ function EditProduct({ pro }) {
     <Fragment>
       <button
         type="button"
-        className="btn btn-warning"
+        className="btn btn-warning btn-sm"
         data-toggle="modal"
         data-target={`#id${pro.id}`}
       >
-        Edit Product
+        <EditIcon/>
       </button>
 
       {/* -- The Modal -- */}

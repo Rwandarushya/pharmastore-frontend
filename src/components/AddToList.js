@@ -22,7 +22,7 @@ function AddToList() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
-      window.location = "/list";
+      window.location = "/admin";
     } catch (err) {
       console.error(err.message);
     }
@@ -30,7 +30,7 @@ function AddToList() {
 
   return (
     <Fragment>
-      <h3 className="mt-2">List of Available Product </h3>
+      <h3 className="mt-2 ">List of Available Product </h3>
       <button
         type="button"
         className="btn btn-primary"
