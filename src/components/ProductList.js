@@ -114,7 +114,7 @@ export default function CustomPaginationActionsTable() {
   //Delete product
   const deleteProduct = async (id) => {
     try {
-      const deleteProduct = await fetch(`http://localhost:5000/list/${id}`, {
+      const deleteProduct = await fetch(`https://pharmastore-backend.herokuapp.com/list/${id}`, {
         method: "DELETE",
       });
       console.log(deleteProduct);
@@ -127,7 +127,7 @@ export default function CustomPaginationActionsTable() {
 
   const getProducts = async () => {
     try {
-      const response = await fetch("http://localhost:5000/list");
+      const response = await fetch("https://pharmastore-backend.herokuapp.com/list");
       const jsonData = await response.json();
 
       setProducts(jsonData);

@@ -13,7 +13,7 @@ function CreateProduct() {
 	const [ productList, setProductList ] = useState([]);
 	const getProducts = async () => {
 		try {
-			const response = await fetch('http://localhost:5000/list');
+			const response = await fetch('https://pharmastore-backend.herokuapp.com/list');
 			const jsonData = await response.json();
 
 			setProductList(jsonData);
@@ -46,7 +46,7 @@ function CreateProduct() {
 		e.preventDefault();
 		try {
 			const body = product;
-			const resp = await fetch(`http://localhost:5000/products`, {
+			const resp = await fetch(`https://pharmastore-backend.herokuapp.com/products`, {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(body)

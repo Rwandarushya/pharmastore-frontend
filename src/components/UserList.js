@@ -113,7 +113,7 @@ export default function CustomPaginationActionsTable() {
   //Delete product
   const deleteUser = async (id) => {
     try {
-      const deleteProduct = await fetch(`http://localhost:5000/users/${id}`, {
+      const deleteProduct = await fetch(`https://pharmastore-backend.herokuapp.com/users/${id}`, {
         method: "DELETE",
         headers: { Authorization: localStorage.getItem('token')}
       });
@@ -127,7 +127,7 @@ export default function CustomPaginationActionsTable() {
  console.log(`the token is ${localStorage.getItem('token')}`);
   const getUsers = async () => {
     try {
-      const response = await fetch("http://localhost:5000/users", {
+      const response = await fetch("https://pharmastore-backend.herokuapp.com/users", {
         headers: { Authorization: localStorage.getItem('token')},
       });
       const jsonData = await response.json();
