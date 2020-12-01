@@ -24,7 +24,7 @@ function RegisterModal() {
 		try {
 			const body = user;
 			console.log(body);
-			const resp = await fetch(`http://localhost:5000/users/signup`, {
+			const resp = await fetch(`https://pharmastore-backend.herokuapp.com/users/signup`, {
 				method: 'POST',
 				headers: {
 					Authorization: localStorage.getItem('token')
@@ -177,7 +177,7 @@ function RegisterModal() {
 								type="button"
 								className="btn btn-warning"
 								data-dismiss="modal"
-								onClick={(e) => saveUser(e)}
+								// onClick={(e) => saveUser(e)}
 							>
 								Save
 							</button>

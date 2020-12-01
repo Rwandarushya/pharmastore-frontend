@@ -11,7 +11,7 @@ function OrderList(){
     //Delete product
     const deleteProduct = async(id)=>{
         try {
-            const deleteProduct= await fetch(`http://localhost:5000/products/${id}`,{
+            const deleteProduct= await fetch(`https://pharmastore-backend.herokuapp.com/products/${id}`,{
                 method: 'DELETE'
             })
             console.log(deleteProduct);
@@ -26,7 +26,7 @@ function OrderList(){
         try {
             const user = JSON.parse(localStorage.getItem("user")) 
             const email=user.email;
-            const response= await fetch(`http://localhost:5000/products/${email}`);
+            const response= await fetch(`https://pharmastore-backend.herokuapp.com/products/${email}`);
             const jsonData = await response.json();
             
             setProducts(jsonData);

@@ -14,7 +14,7 @@ function Footer() {
                 </h3>
                 <p>
                   Pharmastore is a web application developed in partnership with
-                  caves pharmacy to help pharmacists to make list of the product
+                  Kaves pharmacy to help pharmacists to make list of the product
                   they want to order. with pharma store you can check the list
                   of products, search for product from the database, once list
                   is ready you can export it to excel document.
@@ -39,11 +39,11 @@ function Footer() {
               <div className="block-5 mb-5">
                 <h3 className="footer-heading mb-4">Contact Info</h3>
                 <ul className="list-unstyled">
-                  <li className="address">kk 19 av kabeza, Kigali-Rwanda</li>
+                  <li className="address">KG 11 Ave Kimironko, Kigali-Rwanda</li>
                   <li className="phone">
-                    <a href="tel://23923929210">+250 782 581 020</a>
+                    <a href="tel://0788851754">+250 788 851 754</a>
                   </li>
-                  <li className="email">rwandarushyarobert@gmail.com</li>
+                  <li className="email">majadosi@gmail.com</li>
                 </ul>
               </div>
             </div>

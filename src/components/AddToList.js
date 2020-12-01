@@ -17,7 +17,7 @@ function AddToList() {
     e.preventDefault();
     try {
       const body = product;
-      const resp = await fetch(`http://localhost:5000/list`, {
+      const resp = await fetch(`https://pharmastore-backend.herokuapp.com/list`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),

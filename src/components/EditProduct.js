@@ -9,7 +9,7 @@ function EditProduct({ pro }) {
     e.preventDefault();
     try {
       const body = { quantity };
-      const resp = await fetch(`http://localhost:5000/products/${pro.id}`, {
+      const resp = await fetch(`https://pharmastore-backend.herokuapp.com/products/${pro.id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
