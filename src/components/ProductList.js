@@ -116,6 +116,9 @@ export default function CustomPaginationActionsTable() {
     try {
       const deleteProduct = await fetch(`https://pharmastore-backend.herokuapp.com/list/${id}`, {
         method: "DELETE",
+        headers: {
+					Authorization: localStorage.getItem('token')
+        }
       });
       console.log(deleteProduct);
 

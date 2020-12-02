@@ -6,6 +6,7 @@ function NavBar() {
 	const { state } = useContext(AppContext);
 	const url = null;
 
+	let user = JSON.parse(localStorage.getItem('user'));
 	const [showMenu, setShowMenu ] = useState(false);
 
 	let menu;
@@ -82,12 +83,17 @@ function NavBar() {
 						</nav>
 					</div>
 					<div className="icons">
-						<Link to="/admin" className="icons-btn d-inline-block bag">
-							<span>
-								<i className="fas fa-users-cog" />
-							</span>
-							<span className="number">1</span>
-						</Link>
+						{state.currentUser &&(
+							user.role=== 'admin' && (
+								<Link to="/admin" className="icons-btn d-inline-block bag">
+								<span>
+									<i className="fas fa-users-cog" />
+								</span>
+								<span className="number">1</span>
+							</Link>
+							)
+						)}
+						
 						<a href={url} className="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none">
 							<span className="icon-menu" onClick={()=>setShowMenu(!showMenu)} />
 						</a>
