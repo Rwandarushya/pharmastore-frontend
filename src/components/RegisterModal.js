@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from 'react';
 
 let user = JSON.parse(localStorage.getItem('user'));
-if (user) console.log(JSON.stringify(user.token));
 function RegisterModal() {
 	const [ user, setUser ] = useState({
 		names: '',
