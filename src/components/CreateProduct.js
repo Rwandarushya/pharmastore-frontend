@@ -7,7 +7,8 @@ import NavBar from './NavBar';
 function CreateProduct() {
 
 	const filterOptions = createFilterOptions({
-		matchFrom: 'start'
+		limit:6
+		
 	});
 
 	const [ productList, setProductList ] = useState([]);
