@@ -9,7 +9,6 @@ function RegisterModal() {
 		pharmacyName: '',
 		PhoneNumber: '',
 		role: '',
-		pharmacyId: ''
 	});
 	const handleChange = (e) => {
 		setUser({
@@ -23,15 +22,15 @@ function RegisterModal() {
 		try {
 			const body = user;
 			console.log(body);
-			const resp = await fetch(`https://pharmastore-backend.herokuapp.com/users/signup`, {
+			const resp = await fetch(`https://pharmastore-backend.herokuapp.com/users/signup`,{
 				method: 'POST',
 				headers: {
-					Authorization: localStorage.getItem('token')
-        },
+					 Authorization: localStorage.getItem('token'),
+					'Content-Type': 'application/json'
+				},
 				body: JSON.stringify(body)
-      });
-			// window.location = '/admin';
-			console.log(resp)
+	  }).then(res => res.json())
+	  .then(window.location = '/admin');
 		} catch (err) {
 			console.error(err.message);
 		}
@@ -176,7 +175,7 @@ function RegisterModal() {
 								type="button"
 								className="btn btn-warning"
 								data-dismiss="modal"
-								// onClick={(e) => saveUser(e)}
+								onClick={(e) => saveUser(e)}
 							>
 								Save
 							</button>
