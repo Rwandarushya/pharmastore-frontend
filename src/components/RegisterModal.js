@@ -22,7 +22,7 @@ function RegisterModal() {
 		try {
 			const body = user;
 			console.log(body);
-			const resp = await fetch(`https://pharmastore-backend.herokuapp.com/users/signup`,{
+			const resp = await fetch(`http://localhost:5000/users/signup`,{
 				method: 'POST',
 				headers: {
 					 Authorization: localStorage.getItem('token'),
@@ -141,11 +141,10 @@ function RegisterModal() {
 											<input
 												type="radio"
 												name="role"
-												checked={(user.role = 'standard')}
-												onChange={handleChange}
 												className="form-check-input"
 												id="general"
-												value="general"
+												value="standard"
+												onChange={handleChange}
 												required
 											/>
 											General
@@ -156,9 +155,8 @@ function RegisterModal() {
 											<input
 												type="radio"
 												name="role"
-												id="administrator"
-												value="administrator"
-												checked={(user.role = 'admin')}
+												id="admin"
+												value="admin"
 												onChange={handleChange}
 												className="form-check-input"
 												required

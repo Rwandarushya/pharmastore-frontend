@@ -113,21 +113,22 @@ export default function CustomPaginationActionsTable() {
   //Delete product
   const deleteUser = async (id) => {
     try {
-      const deleteProduct = await fetch(`https://pharmastore-backend.herokuapp.com/users/${id}`, {
+      const deleteProduct = await fetch(`http://localhost:5000/users/${id}`, {
         method: "DELETE",
         headers: { Authorization: localStorage.getItem('token')}
       });
       console.log(deleteProduct);
-
       setUsers(users.filter((pro) => pro.id !== id));
     } catch (err) {
       console.error(err.message);
     }
   };
- console.log(`the token is ${localStorage.getItem('token')}`);
+ 
+  const user= JSON.parse(localStorage.getItem('user')) ; 
+
   const getUsers = async () => {
     try {
-      const response = await fetch("https://pharmastore-backend.herokuapp.com/users", {
+      const response = await fetch("http://localhost:5000/users", {
         headers: { Authorization: localStorage.getItem('token')},
       });
       const jsonData = await response.json();
@@ -179,7 +180,7 @@ export default function CustomPaginationActionsTable() {
                 {usr.role}
               </TableCell>
               
-              <TableCell style={{ width: 160 }} align="right">
+              <TableCell style={ {width: 16, display: !(user.role==='admin') && 'none'}} align="right">
               <button
                   className="btn btn-danger btn-sm"
                   onClick={() => {deleteUser(usr.id)}}

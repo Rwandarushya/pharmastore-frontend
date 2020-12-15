@@ -114,7 +114,7 @@ export default function CustomPaginationActionsTable() {
   //Delete product
   const deleteProduct = async (id) => {
     try {
-      const deleteProduct = await fetch(`https://pharmastore-backend.herokuapp.com/list/${id}`, {
+      const deleteProduct = await fetch(`http://localhost:5000/list/${id}`, {
         method: "DELETE",
         headers: {
 					Authorization: localStorage.getItem('token')
@@ -130,7 +130,7 @@ export default function CustomPaginationActionsTable() {
 
   const getProducts = async () => {
     try {
-      const response = await fetch("https://pharmastore-backend.herokuapp.com/list");
+      const response = await fetch("http://localhost:5000/list");
       const jsonData = await response.json();
 
       setProducts(jsonData);
@@ -143,6 +143,8 @@ export default function CustomPaginationActionsTable() {
   }, []);
 
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, products.length - page * rowsPerPage);
+
+  const user= JSON.parse(localStorage.getItem('user')) ;
 
   return (
     <TableContainer component={Paper}>
@@ -166,7 +168,7 @@ export default function CustomPaginationActionsTable() {
               <TableCell align="left">
                 {pro.description}
               </TableCell>
-              <TableCell style={{ width: 160 }} align="right">
+              <TableCell style={{width: 16, display: !(user.role==='admin') && 'none'}} align="right">
               <button
                   className="btn btn-danger btn-sm"
                   onClick={() => {deleteProduct(pro.id)}}
@@ -222,7 +224,7 @@ export default function CustomPaginationActionsTable() {
 //   //Delete product
 //   const deleteProduct = async (id) => {
 //     try {
-//       const deleteProduct = await fetch(`https://pharmastore-backend.herokuapp.com/list/${id}`, {
+//       const deleteProduct = await fetch(`http://localhost:5000/list/${id}`, {
 //         method: "DELETE",
 //       });
 //       console.log(deleteProduct);
@@ -235,7 +237,7 @@ export default function CustomPaginationActionsTable() {
 
 //   const getProducts = async () => {
 //     try {
-//       const response = await fetch("https://pharmastore-backend.herokuapp.com/list");
+//       const response = await fetch("http://localhost:5000/list");
 //       const jsonData = await response.json();
 
 //       setProducts(jsonData);
