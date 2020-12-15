@@ -36,7 +36,7 @@ const LoginComponent = (props) => {
       password: account.password,
     };
     axios
-      .post("http://localhost:5000/users/login", data)
+      .post("https://pharmastore-backend.herokuapp.com/users/login", data)
       .then((res) => {
         console.log(res);
         if (res.data.status === 200) {

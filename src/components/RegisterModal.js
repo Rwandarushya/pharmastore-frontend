@@ -22,7 +22,7 @@ function RegisterModal() {
 		try {
 			const body = user;
 			console.log(body);
-			const resp = await fetch(`http://localhost:5000/users/signup`,{
+			const resp = await fetch(`https://pharmastore-backend.herokuapp.com/users/signup`,{
 				method: 'POST',
 				headers: {
 					 Authorization: localStorage.getItem('token'),
