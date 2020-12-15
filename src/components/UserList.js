@@ -183,6 +183,7 @@ export default function CustomPaginationActionsTable() {
               <button
                   className="btn btn-danger btn-sm"
                   onClick={() => {deleteUser(usr.id)}}
+                  style={{display:(usr.role==='admin')&& 'none'}}
                 >
                   Delete
                 </button>
