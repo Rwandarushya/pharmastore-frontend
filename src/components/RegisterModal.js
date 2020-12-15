@@ -132,42 +132,41 @@ function RegisterModal() {
 								/>
 							</div>
 							<div class="form-group">
-								<label for="user_type" class="control-label">
-									User Type
-								</label>
-								<div className="d-flex p-3 justify-content-center">
-									<div className="form-check">
-										<label class="radio-inline px-3">
-											<input
-												type="radio"
-												name="role"
-												checked={(user.role = 'standard')}
-												onChange={handleChange}
-												className="form-check-input"
-												id="general"
-												value="general"
-												required
-											/>
-											General
-										</label>
-									</div>
-									<div className="form-check">
-										<label class="radio-inline px-3">
-											<input
-												type="radio"
-												name="role"
-												id="administrator"
-												value="administrator"
-												checked={(user.role = 'admin')}
-												onChange={handleChange}
-												className="form-check-input"
-												required
-											/>
-											Administrator
-										</label>
-									</div>
-								</div>
-							</div>
+                                <label for="user_type" class="control-label">
+                                    User Type
+                                </label>
+                                <div className="d-flex p-3 justify-content-center">
+                                    <div className="form-check">
+                                        <label class="radio-inline px-3">
+                                            <input
+                                                type="radio"
+                                                name="role"
+                                                className="form-check-input"
+                                                id="general"
+                                                value="standard"
+                                                onChange={handleChange}
+                                                required
+                                            />
+                                            Standard
+                                        </label>
+                                    </div>
+                                    <div className="form-check">
+                                        <label class="radio-inline px-3">
+                                            <input
+                                                type="radio"
+                                                name="role"
+                                                id="admin"
+                                                value="admin"
+                                                onChange={handleChange}
+                                                className="form-check-input"
+                                                required
+                                            />
+                                            Administrator
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
 						</div>
 
 						<div className="modal-footer">
